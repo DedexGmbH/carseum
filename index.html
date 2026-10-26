@@ -5,83 +5,162 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Carseum</title>
 <meta name="description" content="The car app for UK drivers: show your build, find meets, drive in convoy and find garages that know your car. Coming soon to iPhone.">
+<meta name="theme-color" content="#07080b">
 <meta property="og:title" content="The Carseum">
 <meta property="og:description" content="The car app for UK drivers. Coming soon to iPhone.">
-<meta property="og:image" content="assets/app-1.jpg">
+<meta property="og:image" content="https://dedexgmbh.github.io/carseum/assets/app-1.jpg">
 <link rel="icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,600;0,700;0,800;1,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-snap="mandatory">
 <header class="top gutter">
-  <div class="inner">
+  <div class="bar">
     <a class="brand" href="./"><img src="assets/logo.png" alt=""><span><small>THE</small>CARSEUM</span></a>
     <nav class="links" aria-label="Main">
-      <a href="./" aria-current="page">App</a>
-      <a href="#features">Features</a>
+      <a class="opt" href="#build">Features</a>
+      <a class="opt" href="#carplay">CarPlay</a>
       <a href="dash.html">Dash</a>
-      <a href="https://dedexgmbh.github.io/carseum-links/privacy.html">Privacy</a>
+      <a href="#soon">Coming soon</a>
     </nav>
   </div>
 </header>
+<nav class="rail" aria-label="Sections"></nav>
 
 <main>
-  <section class="hero gutter">
+  <section class="scene hero gutter" id="top" data-title="The Carseum">
+    <div class="collage" aria-hidden="true">
+      <div class="phone"><div class="screen"><img src="media/meets.jpg" alt=""></div></div>
+      <div class="phone"><div class="screen"><img src="media/feed.jpg" alt=""></div></div>
+      <div class="phone"><div class="screen"><img src="media/garages.jpg" alt=""></div></div>
+    </div>
     <div class="inner">
-      <div class="stack">
-        <span class="pill">Coming soon to iPhone</span>
+      <div class="copy">
+        <span class="pill reveal" style="--d:3">Coming soon to iPhone</span>
         <h1>The car app for UK drivers</h1>
-        <p class="lede">Show your build, find meets near you, drive together in a live convoy, and find garages that actually know your car. Made by car people, for car people.</p>
-        <div class="cta">
-          <a class="btn primary" href="#features">See what it does</a>
+        <p class="reveal" style="--d:5">Show your build, find meets, drive together live and find garages that know your car.</p>
+        <div class="cta reveal" style="--d:6">
+          <a class="btn primary" href="#build">Explore</a>
           <a class="btn" href="dash.html">The Carseum Dash</a>
         </div>
       </div>
-      <img class="hero-shot" src="assets/app-1.jpg" width="720" height="900" alt="The Carseum app on an iPhone">
     </div>
+    <a class="scroll-hint" href="#build">SCROLL</a>
   </section>
 
-  <section class="gutter" id="features">
+  <section class="scene glow gutter" id="build" data-title="Show your build">
     <div class="inner">
-      <span class="kicker">What's inside</span>
-      <h2>Everything for your car life</h2>
-      <div class="features">
-        <div class="feature"><span class="tag">Garage &amp; feed</span><h3>Show your build</h3><p>Your cars with photos, specs from the DVLA and a timeline of every mod. A feed of real cars from real people.</p></div>
-        <div class="feature"><span class="tag">Spotted</span><h3>Post rare cars</h3><p>Seen a Chiron in Mayfair? Pin it on the live map. The rare ones get a badge.</p></div>
-        <div class="feature"><span class="tag">Meets</span><h3>Meets near you</h3><p>Every meet on one map: time, place and who's going. Host your own in a few taps.</p></div>
-        <div class="feature"><span class="tag">Convoy</span><h3>Drive together, live</h3><p>See your whole crew moving on one map with ETAs, quick messages and a push-to-talk walkie-talkie.</p></div>
-        <div class="feature"><span class="tag">Navigation</span><h3>Turn-by-turn, built in</h3><p>Big directions with voice, right inside the app, in miles or km. No switching to another maps app.</p></div>
-        <div class="feature"><span class="tag">Garages</span><h3>Garages that know your car</h3><p>Matched to your make, model and engine, with reviews and booking.</p></div>
-        <div class="feature"><span class="tag soon">In development</span><h3>CarPlay</h3><p>Your convoy and directions on the car's screen. Waiting for Apple's approval.</p></div>
-        <div class="feature"><span class="tag soon">Coming later</span><h3>The Carseum Dash</h3><p>A small round screen for your dash that shows the next turn and your crew. <a href="dash.html">See how it's built</a>.</p></div>
+      <div class="copy">
+        <span class="kicker reveal">Garage &amp; feed</span>
+        <h2 class="reveal" style="--d:1">Show your build</h2>
+        <p class="reveal" style="--d:2">Your cars with photos, DVLA-checked specs and a timeline of every mod. A feed of real cars from real people.</p>
       </div>
+      <div class="media"><div class="parallax"><div class="phone rise">
+        <div class="screen"><video src="media/feed.mp4" poster="media/feed.jpg" muted loop playsinline preload="none" aria-label="Scrolling the feed"></video></div>
+        <span class="sample-tag">App preview · sample content</span>
+      </div></div></div>
     </div>
   </section>
 
-  <section class="gutter">
+  <section class="scene flip glow gutter" id="spotted" data-title="Spotted">
     <div class="inner">
-      <span class="kicker">A look inside</span>
-      <h2>Made for car people</h2>
-      <div class="gallery" tabindex="0" aria-label="App screens, scroll sideways">
-        <img src="assets/app-1.jpg" width="720" height="900" alt="The Carseum: the car app for UK drivers" loading="lazy">
-        <img src="assets/app-2.jpg" width="720" height="900" alt="Show your build: the feed" loading="lazy">
-        <img src="assets/app-3.jpg" width="720" height="900" alt="Meets and live convoys" loading="lazy">
-        <img src="assets/app-4.jpg" width="720" height="900" alt="Garages that know your car" loading="lazy">
-        <img src="assets/app-5.jpg" width="720" height="900" alt="Coming soon" loading="lazy">
+      <div class="copy">
+        <span class="kicker reveal">Spotted</span>
+        <h2 class="reveal" style="--d:1">Seen something rare?</h2>
+        <p class="reveal" style="--d:2">A Chiron in Knightsbridge, an F8 in Mayfair. Pin it on the live map; the rare ones get a badge.</p>
       </div>
-      <p class="note">Screens show sample content.</p>
+      <div class="media"><div class="parallax"><div class="phone rise">
+        <div class="screen"><img src="media/spotted.jpg" alt="Spotted: rare cars on a map of London" loading="lazy"></div>
+        <span class="sample-tag">App preview · sample content</span>
+      </div></div></div>
     </div>
   </section>
 
-  <section class="gutter">
-    <div class="inner split">
-      <div class="stack">
-        <span class="kicker">In development</span>
-        <h2>Your convoy on CarPlay</h2>
-        <p class="muted">Directions to the meeting point with your crew moving on the map, right on the car's screen. CarPlay support needs Apple's approval, so it comes after launch.</p>
+  <section class="scene glow gutter" id="meets" data-title="Meets">
+    <div class="inner">
+      <div class="copy">
+        <span class="kicker reveal">Meets</span>
+        <h2 class="reveal" style="--d:1">Meets near you</h2>
+        <p class="reveal" style="--d:2">Every meet on one map: when, where and who's going. Host your own in a few taps.</p>
       </div>
-      <div class="frame"><img src="assets/carplay.jpg" width="800" height="480" alt="CarPlay showing the route to Ace Cafe London with the convoy on the map" loading="lazy"></div>
+      <div class="media"><div class="parallax"><div class="phone rise">
+        <div class="screen"><video src="media/meets.mp4" poster="media/meets.jpg" muted loop playsinline preload="none" aria-label="Meets on a map of the UK"></video></div>
+        <span class="sample-tag">App preview · sample content</span>
+      </div></div></div>
+    </div>
+  </section>
+
+  <section class="scene flip glow gutter" id="convoy" data-title="Convoy">
+    <div class="inner">
+      <div class="copy">
+        <span class="kicker reveal">Live convoy</span>
+        <h2 class="reveal" style="--d:1">Drive together</h2>
+        <p class="reveal" style="--d:2">Your whole crew moving on one map, with ETAs to the meeting point.</p>
+        <ul class="points reveal" style="--d:3">
+          <li>Push-to-talk walkie-talkie for the convoy</li>
+          <li>One-tap messages: fuel stop, wait for me, hazard ahead</li>
+          <li>Turn-by-turn directions with voice, in miles or km</li>
+        </ul>
+      </div>
+      <div class="media"><div class="parallax"><div class="phone rise">
+        <div class="screen"><img src="media/convoy.jpg" alt="Live convoy map with four drivers and their ETAs" loading="lazy"></div>
+        <span class="sample-tag">App preview · sample content</span>
+      </div></div></div>
+    </div>
+  </section>
+
+  <section class="scene glow gutter" id="garages" data-title="Garages">
+    <div class="inner">
+      <div class="copy">
+        <span class="kicker reveal">Garages</span>
+        <h2 class="reveal" style="--d:1">Garages that know your car</h2>
+        <p class="reveal" style="--d:2">Matched to your make, model and engine, with real reviews and booking in the app.</p>
+      </div>
+      <div class="media"><div class="parallax"><div class="phone rise">
+        <div class="screen"><video src="media/garages.mp4" poster="media/garages.jpg" muted loop playsinline preload="none" aria-label="Garages matched to your car"></video></div>
+        <span class="sample-tag">App preview · sample content</span>
+      </div></div></div>
+    </div>
+  </section>
+
+  <section class="scene flip glow gutter" id="carplay" data-title="CarPlay">
+    <div class="inner">
+      <div class="copy">
+        <span class="kicker gold reveal">In development</span>
+        <h2 class="reveal" style="--d:1">On your car's screen</h2>
+        <p class="reveal" style="--d:2">Directions to the meet with your crew moving on the map, on CarPlay. It needs Apple's approval, so it comes after launch.</p>
+      </div>
+      <div class="media"><div class="parallax"><div class="car-screen rise">
+        <video src="media/carplay.mp4" poster="media/carplay.jpg" muted loop playsinline preload="none" aria-label="CarPlay navigation with the convoy"></video>
+        <span class="sample-tag">In development · sample content</span>
+      </div></div></div>
+    </div>
+  </section>
+
+  <section class="scene gutter" id="dash" data-title="Carseum Dash">
+    <div class="inner">
+      <div class="copy">
+        <span class="kicker gold reveal">Prototype</span>
+        <h2 class="reveal" style="--d:1">The Carseum Dash</h2>
+        <p class="reveal" style="--d:2">A small round screen for your dashboard. Your next turn and your convoy at a glance, so your phone stays in your pocket.</p>
+        <div class="cta reveal" style="--d:3"><a class="btn" href="dash.html">See how it's built</a></div>
+      </div>
+      <div class="media rise"><canvas class="showcase in-media" data-file="parts/carseum-dash-bezel.stl" aria-label="The Dash case turning in 3D"></canvas></div>
+    </div>
+  </section>
+
+  <section class="scene final gutter" id="soon" data-title="Coming soon">
+    <div class="inner">
+      <div class="copy">
+        <span class="pill reveal">Coming soon to iPhone</span>
+        <h2 class="reveal" style="--d:1">Made by car people</h2>
+        <p class="reveal" style="--d:2">The Carseum launches on the App Store soon. Questions, garages or partnerships: <span class="mono">carseum@icloud.com</span></p>
+        <div class="cta reveal" style="--d:3">
+          <a class="btn primary" href="#top">Back to top</a>
+          <a class="btn" href="dash.html">The Carseum Dash</a>
+        </div>
+      </div>
     </div>
   </section>
 </main>
@@ -89,9 +168,14 @@
 <footer class="gutter">
   <div class="inner">
     <span>© 2026 HJDEDE LOGISTICS LTD, trading as The Carseum</span>
-    <span>Contact: <span class="mono">carseum@icloud.com</span></span>
     <span><a href="https://dedexgmbh.github.io/carseum-links/privacy.html">Privacy</a> · <a href="https://dedexgmbh.github.io/carseum-links/terms.html">Terms</a></span>
   </div>
 </footer>
+
+<script src="motion.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js" defer></script>
+<script src="viewer.js" defer></script>
 </body>
 </html>

@@ -5,62 +5,92 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Carseum Dash</title>
 <meta name="description" content="The Carseum Dash: a round screen for your dash that shows your next turn and your convoy. Every part in 3D, with sizes, print files and build steps.">
+<meta name="theme-color" content="#07080b">
 <link rel="icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,600;0,700;0,800;1,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-snap="proximity">
 <header class="top gutter">
-  <div class="inner">
+  <div class="bar">
     <a class="brand" href="./"><img src="assets/logo.png" alt=""><span><small>THE</small>CARSEUM</span></a>
     <nav class="links" aria-label="Main">
-      <a href="./">App</a>
-      <a href="dash.html" aria-current="page">Dash</a>
+      <a class="opt" href="./">App</a>
+      <a class="opt" href="#f10">F10 clip</a>
+      <a class="opt" href="#e93">E93 insert</a>
       <a href="#parts">3D parts</a>
       <a href="#downloads">Downloads</a>
     </nav>
   </div>
 </header>
+<nav class="rail" aria-label="Sections"></nav>
 
 <main>
-  <section class="hero gutter">
+  <section class="scene hero gutter" id="top" data-title="Carseum Dash">
+    <canvas class="showcase" data-file="parts/carseum-dash-bezel.stl" aria-label="The Dash case turning in 3D"></canvas>
     <div class="inner">
-      <div class="stack">
-        <span class="pill">Prototype · in testing</span>
+      <div class="copy">
+        <span class="pill reveal" style="--d:3">Prototype · in testing</span>
         <h1>The Carseum Dash</h1>
-        <p class="lede">A small round screen for your dashboard. It connects to The Carseum app over Bluetooth and shows your next turn and how far your convoy is, so your phone can stay in your pocket.</p>
-        <div class="cta">
+        <p class="reveal" style="--d:5">A small round screen for your dashboard. Your next turn and your convoy at a glance, from The Carseum app over Bluetooth.</p>
+        <div class="cta reveal" style="--d:6">
           <a class="btn primary" href="#parts">Spin the parts in 3D</a>
           <a class="btn" href="#downloads">Download the files</a>
         </div>
       </div>
-      <div class="frame"><img src="assets/e93-driver.png" width="1400" height="900" alt="The Dash fitted flush in a BMW E93 centre vent, seen from the driver's seat"></div>
     </div>
+    <a class="scroll-hint" href="#shows">SCROLL</a>
   </section>
 
-  <section class="gutter">
-    <div class="inner stack">
-      <span class="kicker">The screen</span>
-      <h2>What's inside</h2>
-      <div class="specs">
+  <section class="scene glow gutter" id="shows" data-title="What it shows">
+    <div class="inner">
+      <div class="copy">
+        <span class="kicker reveal">At a glance</span>
+        <h2 class="reveal" style="--d:1">Eyes on the road</h2>
+        <p class="reveal" style="--d:2">The next turn with its arrow, distance, street and arrival time. How many in your convoy are sharing and how far the nearest one is. A clock the rest of the time. Tap to switch.</p>
+      </div>
+      <div class="media"><div class="specs rise">
         <div><b>Ø 38.5</b><small>Screen glass, mm</small></div>
-        <div><b>240 × 240</b><small>Pixels, round touch screen</small></div>
+        <div><b>240 × 240</b><small>Round touch screen</small></div>
         <div><b>BLE 5</b><small>Bluetooth to the app</small></div>
         <div><b>5 V USB-C</b><small>About 0.5 W</small></div>
         <div><b>60 / 70 °C</b><small>Dims / switches off when hot</small></div>
         <div><b>Miles or km</b><small>Follows the app</small></div>
-      </div>
-      <p class="muted">Board: Waveshare ESP32-S3-Touch-LCD-1.28. It shows the next turn (arrow, distance, street, arrival time), your convoy (how many are sharing and the nearest one), and a clock. Tap to switch. The walkie-talkie stays on the phone.</p>
+      </div></div>
     </div>
   </section>
 
-  <section class="gutter" id="parts">
+  <section class="scene flip glow gutter" id="f10" data-title="F10 vent clip">
     <div class="inner">
-      <span class="kicker">Every part in 3D</span>
-      <h2>Spin it, zoom it, print it</h2>
-      <p class="muted">Pick a part. Drag to spin, pinch or scroll to zoom, two fingers or right-drag to move. These are the exact files that go to the printer.</p>
-      <div class="viewer-wrap">
+      <div class="copy">
+        <span class="kicker reveal">BMW F10 · left-hand drive</span>
+        <h2 class="reveal" style="--d:1">Clips on, comes off</h2>
+        <p class="reveal" style="--d:2">A cup holds the Dash, angled 10° towards the driver. A clip grips one vent slat like a phone holder. No measuring, no tools, no marks. There's a cup for each side of the car.</p>
+        <div class="cta reveal" style="--d:3"><a class="btn" href="downloads/carseum-dash-f10-clip-and-case.zip" download>Download F10 files</a></div>
+      </div>
+      <div class="media"><div class="parallax rise"><img class="render" src="assets/f10-clip-dark.jpg" width="1600" height="1000" alt="The Dash in the vent clip, seen from the side" loading="lazy"></div></div>
+    </div>
+  </section>
+
+  <section class="scene glow gutter" id="e93" data-title="E93 flush insert">
+    <div class="inner">
+      <div class="copy">
+        <span class="kicker reveal">BMW E93 · right-hand drive</span>
+        <h2 class="reveal" style="--d:1">Built in, flush</h2>
+        <p class="reveal" style="--d:2">The screen sits flat in the driver's centre vent like a factory display, sealed from the vent's hot and cold air, while the slats beside it still blow. It fits a spare vent, so the original stays untouched.</p>
+        <div class="cta reveal" style="--d:3"><a class="btn" href="downloads/carseum-dash-e93-insert.zip" download>Download E93 files</a></div>
+      </div>
+      <div class="media"><div class="parallax rise"><img class="render" src="assets/e93-driver-dark.jpg" width="1600" height="1000" alt="The Dash flush in an E93 centre vent, from the driver's seat" loading="lazy"></div></div>
+    </div>
+  </section>
+
+  <section class="flow gutter" id="parts" data-title="3D parts">
+    <div class="inner">
+      <span class="kicker reveal">Every part in 3D</span>
+      <h2 class="reveal" style="--d:1">Spin it, zoom it, print it</h2>
+      <p class="reveal muted" style="--d:2">Pick a part. Drag to spin, pinch or scroll to zoom, two fingers or right-drag to move. These are the exact files that go to the printer.</p>
+      <div class="viewer-wrap reveal" style="--d:3">
         <div class="part-picker" role="tablist" aria-label="Parts">
           <span class="group-label">Dash case</span>
           <button type="button" data-file="parts/carseum-dash-bezel.stl" data-size="Ø 46 × 12 mm">Case front</button>
@@ -88,59 +118,46 @@
     </div>
   </section>
 
-  <section class="gutter" id="f10">
-    <div class="inner stack">
-      <span class="kicker">BMW F10 · left-hand drive · clip-on</span>
-      <h2>Vent clip</h2>
-      <p class="muted">A cup holds the round Dash case, angled 10° towards the driver. A clip grips one horizontal vent slat, like a phone holder. No measuring, no tools, and it comes off without a trace. It fits most cars with horizontal slats; there's a cup for each side of the car.</p>
-      <div class="split">
-        <div class="frame"><img src="assets/f10-clip.png" width="1200" height="800" alt="The vent clip with the Dash, from the side" loading="lazy"></div>
-        <div class="specs">
-          <div><b>Ø 50.6</b><small>Cup outside</small></div>
-          <div><b>10°</b><small>Towards the driver</small></div>
-          <div><b>≈ 27</b><small>Out from the vent</small></div>
-          <div><b>1.8</b><small>Clip gap (slats 1.5–3)</small></div>
+  <section class="flow gutter" id="build" data-title="Build steps">
+    <div class="inner">
+      <span class="kicker reveal">Build</span>
+      <h2 class="reveal" style="--d:1">Putting it together</h2>
+      <div class="two-col reveal" style="--d:2">
+        <div class="col">
+          <h3>F10 vent clip</h3>
+          <ol class="steps">
+            <li><div>Put the board in the round case, screen first, USB-C at the bottom. Snap the back on.</div></li>
+            <li><div>Slide the clip's dovetail sideways into the slot on the back of the cup.</div></li>
+            <li><div>Press the case into the cup, the USB hole over the notch at the bottom.</div></li>
+            <li><div>Plug in a right-angle USB-C cable so it bends back into the vent.</div></li>
+            <li><div>Push the clip onto one vent slat and run the cable to a USB socket.</div></li>
+          </ol>
+          <p class="callout"><b>Print:</b> PETG black, 0.2 mm layers, 4 walls, 40% infill, no supports. About 25 g.</p>
+        </div>
+        <div class="col">
+          <h3>E93 flush insert</h3>
+          <ol class="steps">
+            <li><div>Buy a used centre vent (BMW 64229130458) and measure its driver-side outlet.</div></li>
+            <li><div>Print the 20-minute fit test and check it sits flush and clicks in.</div></li>
+            <li><div>Print the insert, ring and cover in matte black ASA or PETG.</div></li>
+            <li><div>Board in, clamp ring on with two M2 screws, cable through the cover, seal with silicone.</div></li>
+            <li><div>Click the insert into the spare vent and swap the vents, moving the hazard switch plug across.</div></li>
+          </ol>
+          <p class="callout"><b>Sizes are estimates</b> until the spare vent is measured. Print the fit test first.</p>
         </div>
       </div>
-      <h3>Build</h3>
-      <ol class="steps">
-        <li><div>Put the board in the round case, screen first, USB-C at the bottom. Snap the back on.</div></li>
-        <li><div>Slide the clip's dovetail sideways into the slot on the back of the cup.</div></li>
-        <li><div>Press the case into the cup until it clicks, with the USB hole over the notch at the bottom.</div></li>
-        <li><div>Plug in a right-angle USB-C cable so it bends back into the vent.</div></li>
-        <li><div>Push the clip straight onto one vent slat, then run the cable to a USB socket.</div></li>
-      </ol>
-      <p class="callout"><b>Print:</b> PETG black, 0.2 mm layers, 4 walls, 40% infill, no supports. About 25 g. Loose on the slat? Reprint just the clip with a smaller <code>slat_gap</code>.</p>
     </div>
   </section>
 
-  <section class="gutter" id="e93">
-    <div class="inner stack">
-      <span class="kicker">BMW E93 · right-hand drive · built in</span>
-      <h2>Flush vent insert</h2>
-      <p class="muted">The screen sits flat in the face of the driver's centre vent outlet, like a factory display, while the rest of the outlet keeps working slats. The E9x centre vent is one part with the hazard button (BMW 64229130458), so the insert goes into a used spare vent and the original stays untouched. The screen side is sealed off from the vent's hot and cold air.</p>
-      <div class="split">
-        <div class="frame"><img src="assets/e93-exploded.png" width="1400" height="900" alt="The E93 insert taken apart: back cover, clamp ring, insert and screen" loading="lazy"></div>
-        <div class="specs">
-          <div><b>≈ 98 × 52</b><small>Vent outlet</small></div>
-          <div><b>22</b><small>Depth</small></div>
-          <div><b>Ø 34</b><small>Screen window</small></div>
-          <div><b>0</b><small>Sticks out</small></div>
-        </div>
-      </div>
-      <p class="callout"><b>Sizes are estimates.</b> Measure a spare vent first and print the 20-minute fit test before the real insert. Print the insert in matte black ASA or PETG, not PLA.</p>
-    </div>
-  </section>
-
-  <section class="gutter" id="downloads">
-    <div class="inner stack">
-      <span class="kicker">Downloads</span>
-      <h2>Print files</h2>
-      <div class="cta">
+  <section class="flow gutter" id="downloads" data-title="Downloads">
+    <div class="inner">
+      <span class="kicker reveal">Downloads</span>
+      <h2 class="reveal" style="--d:1">Print files</h2>
+      <div class="cta reveal" style="--d:2">
         <a class="btn primary" href="downloads/carseum-dash-f10-clip-and-case.zip" download>F10 clip + Dash case (.zip)</a>
         <a class="btn" href="downloads/carseum-dash-e93-insert.zip" download>E93 insert (.zip)</a>
       </div>
-      <div class="table"><table>
+      <div class="table reveal" style="--d:3"><table>
         <thead><tr><th>Part</th><th>For</th><th>Size (mm)</th><th>File</th></tr></thead>
         <tbody>
           <tr><td>Case front</td><td>Dash</td><td class="num">Ø 46 × 12</td><td><a class="dl" href="parts/carseum-dash-bezel.stl" download>carseum-dash-bezel.stl</a></td></tr>
@@ -154,22 +171,22 @@
           <tr><td>Back cover</td><td>E93 insert</td><td class="num">55 × 51 × 4</td><td><a class="dl" href="parts/e93-vent-pod-cover.stl" download>e93-vent-pod-cover.stl</a></td></tr>
         </tbody>
       </table></div>
-      <p class="note">For personal use. Use the Dash safely: keep it out of your view of the road and away from airbags, and don't touch it while driving.</p>
+      <p class="note">For personal use. Keep the Dash out of your view of the road and away from airbags, and don't touch it while driving.</p>
     </div>
   </section>
 </main>
 
 <footer class="gutter">
   <div class="inner">
-    <span>© 2026 HJDEDE LOGISTICS LTD, trading as The Carseum</span>
-    <span>Contact: <span class="mono">carseum@icloud.com</span></span>
+    <span>© 2026 HJDEDE LOGISTICS LTD, trading as The Carseum · <span class="mono">carseum@icloud.com</span></span>
     <span><a href="./">The Carseum app</a> · <a href="https://dedexgmbh.github.io/carseum-links/privacy.html">Privacy</a></span>
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-<script src="viewer.js"></script>
+<script src="motion.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js" defer></script>
+<script src="viewer.js" defer></script>
 </body>
 </html>
