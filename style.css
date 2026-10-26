@@ -200,8 +200,8 @@ ol.steps li > div { padding-top: 5px; min-width: 0; }
 @media (max-width: 899px) {
   .scene { align-items: end; padding-block: calc(70px + env(safe-area-inset-top, 0px)) calc(40px + env(safe-area-inset-bottom, 0px)); }
   .scene .inner { grid-template-columns: 1fr; gap: 0; }
-  .scene .media { position: absolute; inset: calc(62px + env(safe-area-inset-top, 0px)) 0 auto; z-index: 0; }
-  .scene .phone { height: 64svh; }
+  .scene .media { position: absolute; inset: calc(96px + env(safe-area-inset-top, 0px)) 0 auto; z-index: 0; }
+  .scene .phone { height: 60svh; }
   .scene .car-screen { width: 92%; }
   .scene:not(.hero):not(.final)::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom, transparent 30%, rgba(7, 8, 11, 0.78) 58%, var(--bg) 82%); pointer-events: none; }
   .scene .copy { position: relative; z-index: 2; order: 2; }
