@@ -125,3 +125,4 @@ ol.steps li > div { padding-top: 5px; min-width: 0; }
 footer { border-top: 1px solid var(--line); padding-block: 34px 48px; color: var(--muted); font-size: 14px; }
 footer .inner { display: flex; flex-wrap: wrap; gap: 14px 28px; justify-content: space-between; }
 footer a { color: var(--muted); }
+[hidden] { display: none !important; }
