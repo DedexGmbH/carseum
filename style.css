@@ -238,3 +238,11 @@ ol.steps li > div { padding-top: 5px; min-width: 0; }
 .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 34px; }
 .two-col .col { display: grid; gap: 14px; align-content: start; min-width: 0; }
 .flow .specs { margin-top: 4px; }
+
+/* Hero with the visual beside the text (Dash page) */
+.hero.hero-split { text-align: left; }
+.hero.hero-split .inner { grid-template-columns: 1fr 1fr; justify-items: stretch; }
+.hero.hero-split .copy { justify-items: start; }
+.hero.hero-split .cta { justify-content: flex-start; }
+.hero.hero-split::after { display: none; }
+@media (max-width: 899px) { .hero.hero-split .inner { grid-template-columns: 1fr; } .hero.hero-split { align-items: end; } }
