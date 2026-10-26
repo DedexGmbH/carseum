@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Carseum Dash</title>
+<meta name="description" content="The Carseum Dash: a round screen for your dash that shows your next turn and your convoy. Every part in 3D, with sizes, print files and build steps.">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,600;0,700;0,800;1,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top gutter">
+  <div class="inner">
+    <a class="brand" href="./"><img src="assets/logo.png" alt=""><span><small>THE</small>CARSEUM</span></a>
+    <nav class="links" aria-label="Main">
+      <a href="./">App</a>
+      <a href="dash.html" aria-current="page">Dash</a>
+      <a href="#parts">3D parts</a>
+      <a href="#downloads">Downloads</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero gutter">
+    <div class="inner">
+      <div class="stack">
+        <span class="pill">Prototype · in testing</span>
+        <h1>The Carseum Dash</h1>
+        <p class="lede">A small round screen for your dashboard. It connects to The Carseum app over Bluetooth and shows your next turn and how far your convoy is, so your phone can stay in your pocket.</p>
+        <div class="cta">
+          <a class="btn primary" href="#parts">Spin the parts in 3D</a>
+          <a class="btn" href="#downloads">Download the files</a>
+        </div>
+      </div>
+      <div class="frame"><img src="assets/e93-driver.png" width="1400" height="900" alt="The Dash fitted flush in a BMW E93 centre vent, seen from the driver's seat"></div>
+    </div>
+  </section>
+
+  <section class="gutter">
+    <div class="inner stack">
+      <span class="kicker">The screen</span>
+      <h2>What's inside</h2>
+      <div class="specs">
+        <div><b>Ø 38.5</b><small>Screen glass, mm</small></div>
+        <div><b>240 × 240</b><small>Pixels, round touch screen</small></div>
+        <div><b>BLE 5</b><small>Bluetooth to the app</small></div>
+        <div><b>5 V USB-C</b><small>About 0.5 W</small></div>
+        <div><b>60 / 70 °C</b><small>Dims / switches off when hot</small></div>
+        <div><b>Miles or km</b><small>Follows the app</small></div>
+      </div>
+      <p class="muted">Board: Waveshare ESP32-S3-Touch-LCD-1.28. It shows the next turn (arrow, distance, street, arrival time), your convoy (how many are sharing and the nearest one), and a clock. Tap to switch. The walkie-talkie stays on the phone.</p>
+    </div>
+  </section>
+
+  <section class="gutter" id="parts">
+    <div class="inner">
+      <span class="kicker">Every part in 3D</span>
+      <h2>Spin it, zoom it, print it</h2>
+      <p class="muted">Pick a part. Drag to spin, pinch or scroll to zoom, two fingers or right-drag to move. These are the exact files that go to the printer.</p>
+      <div class="viewer-wrap">
+        <div class="part-picker" role="tablist" aria-label="Parts">
+          <span class="group-label">Dash case</span>
+          <button type="button" data-file="parts/carseum-dash-bezel.stl" data-size="Ø 46 × 12 mm">Case front</button>
+          <button type="button" data-file="parts/carseum-dash-back.stl" data-size="Ø 44 × 2 mm">Case back</button>
+          <span class="group-label">BMW F10 · vent clip</span>
+          <button type="button" data-file="parts/vent-clip-cup.stl" data-size="51 × 51 × 18 mm">Cup (left-hand drive)</button>
+          <button type="button" data-file="parts/vent-clip-uk-cup.stl" data-size="51 × 51 × 18 mm">Cup (right-hand drive)</button>
+          <button type="button" data-file="parts/vent-clip-clip.stl" data-size="16 × 20 × 22 mm">Slat clip</button>
+          <span class="group-label">BMW E93 · flush insert</span>
+          <button type="button" data-file="parts/e93-vent-pod-shell.stl" data-size="98 × 53 × 22 mm">Insert</button>
+          <button type="button" data-file="parts/e93-vent-pod-fit-test.stl" data-size="97 × 118 × 15 mm">Fit test</button>
+          <button type="button" data-file="parts/e93-vent-pod-ring.stl" data-size="Ø 45 × 2.6 mm">Clamp ring</button>
+          <button type="button" data-file="parts/e93-vent-pod-cover.stl" data-size="55 × 51 × 4 mm">Back cover</button>
+        </div>
+        <div class="viewer">
+          <canvas id="stage" aria-label="3D view of the selected part"></canvas>
+          <div class="viewer-info"><b id="part-name">Case front</b><span id="part-size">Ø 46 × 12 mm</span></div>
+          <p class="viewer-status" id="viewer-status">Loading the 3D view…</p>
+          <div class="viewer-actions">
+            <button type="button" id="reset-view">Reset view</button>
+            <a id="part-download" href="parts/carseum-dash-bezel.stl" download>Download .stl</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gutter" id="f10">
+    <div class="inner stack">
+      <span class="kicker">BMW F10 · left-hand drive · clip-on</span>
+      <h2>Vent clip</h2>
+      <p class="muted">A cup holds the round Dash case, angled 10° towards the driver. A clip grips one horizontal vent slat, like a phone holder. No measuring, no tools, and it comes off without a trace. It fits most cars with horizontal slats; there's a cup for each side of the car.</p>
+      <div class="split">
+        <div class="frame"><img src="assets/f10-clip.png" width="1200" height="800" alt="The vent clip with the Dash, from the side" loading="lazy"></div>
+        <div class="specs">
+          <div><b>Ø 50.6</b><small>Cup outside</small></div>
+          <div><b>10°</b><small>Towards the driver</small></div>
+          <div><b>≈ 27</b><small>Out from the vent</small></div>
+          <div><b>1.8</b><small>Clip gap (slats 1.5–3)</small></div>
+        </div>
+      </div>
+      <h3>Build</h3>
+      <ol class="steps">
+        <li><div>Put the board in the round case, screen first, USB-C at the bottom. Snap the back on.</div></li>
+        <li><div>Slide the clip's dovetail sideways into the slot on the back of the cup.</div></li>
+        <li><div>Press the case into the cup until it clicks, with the USB hole over the notch at the bottom.</div></li>
+        <li><div>Plug in a right-angle USB-C cable so it bends back into the vent.</div></li>
+        <li><div>Push the clip straight onto one vent slat, then run the cable to a USB socket.</div></li>
+      </ol>
+      <p class="callout"><b>Print:</b> PETG black, 0.2 mm layers, 4 walls, 40% infill, no supports. About 25 g. Loose on the slat? Reprint just the clip with a smaller <code>slat_gap</code>.</p>
+    </div>
+  </section>
+
+  <section class="gutter" id="e93">
+    <div class="inner stack">
+      <span class="kicker">BMW E93 · right-hand drive · built in</span>
+      <h2>Flush vent insert</h2>
+      <p class="muted">The screen sits flat in the face of the driver's centre vent outlet, like a factory display, while the rest of the outlet keeps working slats. The E9x centre vent is one part with the hazard button (BMW 64229130458), so the insert goes into a used spare vent and the original stays untouched. The screen side is sealed off from the vent's hot and cold air.</p>
+      <div class="split">
+        <div class="frame"><img src="assets/e93-exploded.png" width="1400" height="900" alt="The E93 insert taken apart: back cover, clamp ring, insert and screen" loading="lazy"></div>
+        <div class="specs">
+          <div><b>≈ 98 × 52</b><small>Vent outlet</small></div>
+          <div><b>22</b><small>Depth</small></div>
+          <div><b>Ø 34</b><small>Screen window</small></div>
+          <div><b>0</b><small>Sticks out</small></div>
+        </div>
+      </div>
+      <p class="callout"><b>Sizes are estimates.</b> Measure a spare vent first and print the 20-minute fit test before the real insert. Print the insert in matte black ASA or PETG, not PLA.</p>
+    </div>
+  </section>
+
+  <section class="gutter" id="downloads">
+    <div class="inner stack">
+      <span class="kicker">Downloads</span>
+      <h2>Print files</h2>
+      <div class="cta">
+        <a class="btn primary" href="downloads/carseum-dash-f10-clip-and-case.zip" download>F10 clip + Dash case (.zip)</a>
+        <a class="btn" href="downloads/carseum-dash-e93-insert.zip" download>E93 insert (.zip)</a>
+      </div>
+      <div class="table"><table>
+        <thead><tr><th>Part</th><th>For</th><th>Size (mm)</th><th>File</th></tr></thead>
+        <tbody>
+          <tr><td>Case front</td><td>Dash</td><td class="num">Ø 46 × 12</td><td><a class="dl" href="parts/carseum-dash-bezel.stl" download>carseum-dash-bezel.stl</a></td></tr>
+          <tr><td>Case back</td><td>Dash</td><td class="num">Ø 44 × 2</td><td><a class="dl" href="parts/carseum-dash-back.stl" download>carseum-dash-back.stl</a></td></tr>
+          <tr><td>Cup, left-hand drive</td><td>Vent clip</td><td class="num">51 × 51 × 18</td><td><a class="dl" href="parts/vent-clip-cup.stl" download>vent-clip-cup.stl</a></td></tr>
+          <tr><td>Cup, right-hand drive</td><td>Vent clip</td><td class="num">51 × 51 × 18</td><td><a class="dl" href="parts/vent-clip-uk-cup.stl" download>vent-clip-uk-cup.stl</a></td></tr>
+          <tr><td>Slat clip</td><td>Vent clip</td><td class="num">16 × 20 × 22</td><td><a class="dl" href="parts/vent-clip-clip.stl" download>vent-clip-clip.stl</a></td></tr>
+          <tr><td>Fit test (print first)</td><td>E93 insert</td><td class="num">97 × 118 × 15</td><td><a class="dl" href="parts/e93-vent-pod-fit-test.stl" download>e93-vent-pod-fit-test.stl</a></td></tr>
+          <tr><td>Insert</td><td>E93 insert</td><td class="num">98 × 53 × 22</td><td><a class="dl" href="parts/e93-vent-pod-shell.stl" download>e93-vent-pod-shell.stl</a></td></tr>
+          <tr><td>Clamp ring</td><td>E93 insert</td><td class="num">Ø 45 × 2.6</td><td><a class="dl" href="parts/e93-vent-pod-ring.stl" download>e93-vent-pod-ring.stl</a></td></tr>
+          <tr><td>Back cover</td><td>E93 insert</td><td class="num">55 × 51 × 4</td><td><a class="dl" href="parts/e93-vent-pod-cover.stl" download>e93-vent-pod-cover.stl</a></td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">For personal use. Use the Dash safely: keep it out of your view of the road and away from airbags, and don't touch it while driving.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="gutter">
+  <div class="inner">
+    <span>© 2026 HJDEDE LOGISTICS LTD, trading as The Carseum</span>
+    <span>Contact: <span class="mono">carseum@icloud.com</span></span>
+    <span><a href="./">The Carseum app</a> · <a href="https://dedexgmbh.github.io/carseum-links/privacy.html">Privacy</a></span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="viewer.js"></script>
+</body>
+</html>
